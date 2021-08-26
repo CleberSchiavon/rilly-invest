@@ -133,9 +133,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   modal: {
+    display: 'flex',
+    justifyContent: 'flex-end',
     bottom: 0,
     position: 'absolute',
-    height: '48%',
+    height: '50%',
     backgroundColor: '#fff',
     width: '100%',
     borderTopLeftRadius: 20,
@@ -157,6 +159,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    marginBottom: width /90,
   },
   headerTextView: {
     marginTop: width / 8,
