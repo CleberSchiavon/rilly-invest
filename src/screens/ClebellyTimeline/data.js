@@ -14,7 +14,7 @@ const timelineData = [
   {
     time: '18/06',
     title:
-      ' Peguei seu número e começamos a conversar no whatsapp (desde então trocamos uma média de 110 mil mensagens, sério',
+      ' Peguei seu número e começamos a conversar no whatsapp (desde então trocamos uma média de 110 mil mensagens, sério)',
   },
   {
     time: '03/07',
