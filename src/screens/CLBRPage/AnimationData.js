@@ -8,7 +8,7 @@ const data = [
       source: require('../../data/Lottie/Animations/welcome.json'),
       header: 'Sobre o fundo:',
       body:
-        'De acordo com os nossos especialistas, esse fundo rende por dia 90% LOV na sua carteira, o que te trás duas coisas, lucro e beneficio',
+        'De acordo com os nossos especialistas, esse fundo rende por dia 90% LOV na sua carteira, o que te traz duas coisas, lucro e beneficio',
     },
     {
       source: require('../../data/Lottie/Animations/duckman.json'),
@@ -31,7 +31,7 @@ const data = [
       source: require('../../data/Lottie/Animations/kiss.json'),
       header: 'Sim, pra você',
       body:
-        'A Ideia desse app veio de uma conversa que vocês tiveram a um tempo atrás, lembra?',
+        'A Ideia desse app veio de uma conversa que vocês tiveram há um tempo atrás, lembra?',
     },
     {
       source: require('../../data/Lottie/Animations/gift.json'),
