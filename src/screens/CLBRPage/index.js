@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   FlatList,
@@ -7,18 +7,18 @@ import {
   Vibration,
   TouchableWithoutFeedback,
 } from 'react-native';
-import {Text, Headline, Button} from 'react-native-paper';
+import { Text, Headline, Button } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
-
-// Import Style Carrousel + Style Global
 import styles from './styles.js';
+
+import TextComponent from '../../components/TextComponent';
 
 // Importando a data das animaçoes do Lottie
 import data from './AnimationData';
 
-const {width} = Dimensions.get('screen');
+const { width } = Dimensions.get('screen');
 
-class OnboardingScreen extends Component {
+class CLBRPage extends Component {
   constructor(props) {
     super(props);
     this.flatList = null;
@@ -28,32 +28,39 @@ class OnboardingScreen extends Component {
   renderScreen(item, index) {
     return (
       <View style={styles.innerView}>
-        <View style={{width: width, height: width / 1.5}}>
+        <View
+          style={{
+            width: width,
+            height: width / 1.5,
+          }}
+        >
           <LottieView source={item.source} autoPlay />
         </View>
-        <Headline style={[{color: '#000'}]}>
+        <TextComponent size={25} align="center">
           {item.header}
-        </Headline>
-        <Text
-          style={[
-            {textAlign: 'justify', marginTop: 10, color: '#000'},
-          ]}>
-          {item.body}
-        </Text>
+        </TextComponent>
+
+        <View style={{ marginTop: 10 }}>
+          <TextComponent size={15} align="center">
+            {item.body}
+          </TextComponent>
+        </View>
+
         <Button
           mode="contained"
           labelStyle={styles.fontSmall}
           style={styles.entrar}
           onPress={
             index === data.length - 1
-              ? () => this.props.navigation.navigate('HomeScreen')
+              ? () => this.props.navigation.navigate('ClebellyTimeline')
               : () =>
                   this.flatList.scrollToIndex({
                     animated: true,
                     index: index + 1,
                   })
-          }>
-          {index === data.length - 1 ? 'Começar' : 'Proximo'}
+          }
+        >
+          {index === data.length - 1 ? 'Resgatar' : 'Proximo'}
         </Button>
       </View>
     );
@@ -68,8 +75,9 @@ class OnboardingScreen extends Component {
               <TouchableWithoutFeedback
                 key={i}
                 onPress={() =>
-                  this.flatList.scrollToIndex({animated: true, index: i})
-                }>
+                  this.flatList.scrollToIndex({ animated: true, index: i })
+                }
+              >
                 <Animated.View
                   style={{
                     opacity: this.index.interpolate({
@@ -89,13 +97,13 @@ class OnboardingScreen extends Component {
           })}
         </View>
         <FlatList
-          ref={(r) => (this.flatList = r)}
+          ref={r => (this.flatList = r)}
           style={{}}
           contentContainerStyle={{
             alignItems: 'stretch',
           }}
           data={data}
-          keyExtractor={(item) => item.header}
+          keyExtractor={item => item.header}
           horizontal
           pagingEnabled
           scrollEnabled
@@ -103,8 +111,10 @@ class OnboardingScreen extends Component {
           scrollEventThrottle={16}
           decelerationRate={'fast'}
           showsHorizontalScrollIndicator={false}
-          renderItem={({item, index, navigation}) => this.renderScreen(item, index, navigation)}
-          onScroll={({nativeEvent}) => {
+          renderItem={({ item, index, navigation }) =>
+            this.renderScreen(item, index, navigation)
+          }
+          onScroll={({ nativeEvent }) => {
             this.index.setValue(nativeEvent.contentOffset.x / width);
             Vibration.vibrate(6);
           }}
@@ -114,4 +124,4 @@ class OnboardingScreen extends Component {
   }
 }
 
-export default OnboardingScreen;
+export default CLBRPage;

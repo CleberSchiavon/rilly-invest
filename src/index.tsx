@@ -7,22 +7,29 @@ import {
   RegisterScreen,
   ForgotPasswordScreen,
   Dashboard,
-  Onboarding
+  Onboarding,
+  AvaliableInvestments,
+  CLBRPage,
+  ClebellyTimeline,
+  ClebellyMoments,
 } from './screens';
 
-const Router = createStackNavigator(
+const Stack = createStackNavigator(
   {
     HomeScreen,
     LoginScreen,
     RegisterScreen,
     ForgotPasswordScreen,
     Dashboard,
-    Onboarding
+    Onboarding,
+    AvaliableInvestments,
+    CLBRPage,
+    ClebellyTimeline,
+    ClebellyMoments
   },
   {
     initialRouteName: 'Onboarding',
     headerMode: 'none',
   }
 );
-
-export default createAppContainer(Router);
+export default createAppContainer(Stack) ;

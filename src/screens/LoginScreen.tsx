@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState,useEffect } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
@@ -33,9 +33,11 @@ const LoginScreen = ({ navigation }: Props) => {
     navigation.navigate('Dashboard');
   };
 
-  setTimeout(function() {
-    setSubTitle('Entre com seu email e senha!');
-  }, 1500);
+  useEffect(() => {
+    setTimeout(function() {
+      setSubTitle('Entre com seu email e senha!');
+    }, 1500);
+  })
 
   return (
     <SafeAreaView style={styles.safeAreaView}>

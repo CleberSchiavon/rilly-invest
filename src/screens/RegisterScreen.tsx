@@ -46,9 +46,11 @@ const RegisterScreen = ({ navigation }: Props) => {
     navigation.navigate('Dashboard');
   };
 
-  setTimeout(function() {
-    setBirthLabel('Quando você nasceu?');
-  }, 2200);
+  useEffect(() => {
+    setTimeout(function() {
+      setBirthLabel('Quando você nasceu?');
+    }, 2200);
+  })
 
   return (
     <SafeAreaView style={{flex: 1 }}>

@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { emailValidator } from '../core/utils';
 import Background from '../components/Background';
@@ -17,6 +17,7 @@ type Props = {
 
 const ForgotPasswordScreen = ({ navigation }: Props) => {
   const [email, setEmail] = useState({ value: '', error: '' });
+  const [paragraphLabel, setParagraphLabel] = useState('Normal, você é esquecida mesmo')
 
   const _onSendPressed = () => {
     const emailError = emailValidator(email.value);
@@ -29,6 +30,12 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
     navigation.navigate('LoginScreen');
   };
 
+  useEffect(() => {
+    setTimeout(function() {
+      setParagraphLabel('');
+    }, 1000);
+  })
+
   return (
     <Background>
       <BackButton goBack={() => navigation.navigate('LoginScreen')} />
@@ -36,7 +43,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
       <Logo />
 
       <Header>Esqueceu sua senha?</Header>
-      <Paragraph>Normal, você é esquecida mesmo</Paragraph>
+      <Paragraph>{paragraphLabel}</Paragraph>
 
       <TextInput
         label="Seu email"

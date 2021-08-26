@@ -20,10 +20,12 @@
     "react-native-reanimated": "^2.2.0",
     "react-native-screens": "~2.15.2",
     "react-native-status-bar-height": "^2.4.0",
+    "react-native-timeline-flatlist-mg": "0.0.1",
     "react-native-typewriter": "^0.7.0",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.7.1",
     "react-navigation-stack": "^1.10.2"
   },
   "devDependencies": {

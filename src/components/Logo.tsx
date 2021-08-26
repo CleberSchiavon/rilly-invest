@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     width: 128,
     height: 128,
-    marginBottom: 20,
+    marginBottom: 40,
   },
 });
 

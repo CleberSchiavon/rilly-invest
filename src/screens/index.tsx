@@ -4,3 +4,7 @@ export { default as RegisterScreen } from './RegisterScreen';
 export { default as ForgotPasswordScreen } from './ForgotPasswordScreen';
 export { default as Dashboard } from './Dashboard';
 export { default as Onboarding } from './Onboarding';
+export { default as AvaliableInvestments} from './AvaliableInvestments/index';
+export { default as CLBRPage} from './CLBRPage/index';
+export { default as ClebellyTimeline} from './ClebellyTimeline/index';
+export { default as ClebellyMoments} from './ClebellyMoments/index';
