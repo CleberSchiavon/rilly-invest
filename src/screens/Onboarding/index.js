@@ -106,7 +106,7 @@ class OnboardingScreen extends Component {
           renderItem={({item, index, navigation}) => this.renderScreen(item, index, navigation)}
           onScroll={({nativeEvent}) => {
             this.index.setValue(nativeEvent.contentOffset.x / width);
-            Vibration.vibrate(6);
+            Vibration.vibrate(1);
           }}
         />
       </View>
