@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -21,6 +21,7 @@ import TypeWriter from 'react-native-typewriter';
 type Props = {
   navigation: Navigation;
 };
+const { width, height } = Dimensions.get('window');
 
 const RegisterScreen = ({ navigation }: Props) => {
   const [name, setName] = useState({ value: '', error: '' });
@@ -54,8 +55,9 @@ const RegisterScreen = ({ navigation }: Props) => {
 
   return (
     <SafeAreaView style={{flex: 1 }}>
-    <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
+      <ScrollView>
+    <Background>
 
       <Logo />
 
@@ -112,6 +114,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       </View>
     </Background>
+    </ScrollView >
     </SafeAreaView>
   );
 };
@@ -119,6 +122,8 @@ const RegisterScreen = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   label: {
     color: theme.colors.secondary,
+    marginTop: width / 20,
+    marginBottom: width / 20
   },
   button: {
     marginTop: 24,
@@ -130,6 +135,8 @@ const styles = StyleSheet.create({
   link: {
     fontWeight: 'bold',
     color: theme.colors.primary,
+    marginTop: width / 20,
+    marginBottom: width /20
   },
   marginTop: {
     marginTop: 10,
